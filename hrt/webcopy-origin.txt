@@ -1,0 +1,216 @@
+Uri: https://d31kydh6n6r5j5.cloudfront.net/uploads/sites/161/2019/08/hormones_MTF.pdf
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\uploads\sites\161\2019\08\hormones_MTF.pdf
+Content Type: application/pdf
+
+Uri: https://hrt.eda.gay/assets/css/dark.css
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\dark.css
+Content Type: text/css
+
+Uri: https://hrt.eda.gay/assets/css/fonts/icomoon.eot
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\icomoon.eot
+Content Type: application/vnd.ms-fontobject
+
+Uri: https://hrt.eda.gay/assets/css/fonts/icomoon.svg
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\icomoon.svg
+Content Type: image/svg+xml
+
+Uri: https://hrt.eda.gay/assets/css/fonts/icomoon.ttf
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\icomoon.ttf
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/assets/css/fonts/icomoon.woff
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\icomoon.woff
+Content Type: application/font-woff
+
+Uri: https://hrt.eda.gay/assets/css/fonts/inter-400.woff2
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\inter-400.woff2
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/assets/css/fonts/inter-500.woff2
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\inter-500.woff2
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/assets/css/fonts/inter-700.woff2
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\inter-700.woff2
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/assets/css/fonts/inter-800.woff2
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\fonts\inter-800.woff2
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/assets/css/icomoon.css
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\icomoon.css
+Content Type: text/css
+
+Uri: https://hrt.eda.gay/assets/css/jquery.dataTables.min.css
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\jquery.dataTables.min.css
+Content Type: text/css
+
+Uri: https://hrt.eda.gay/assets/css/jquery.tipsy.css
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\jquery.tipsy.css
+Content Type: text/css
+
+Uri: https://hrt.eda.gay/assets/css/style.css
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\css\style.css
+Content Type: text/css
+
+Uri: https://hrt.eda.gay/assets/img/hrt2.png
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\img\hrt2.png
+Content Type: image/png
+
+Uri: https://hrt.eda.gay/assets/js/dark.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\dark.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/functions.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\functions.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/init.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\init.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/jquery-3.6.0.min.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\jquery-3.6.0.min.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/jquery.dataTables.min.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\jquery.dataTables.min.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/jquery.tipsy.min.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\jquery.tipsy.min.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/assets/js/search.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\assets\js\search.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/bicalutamide/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\bicalutamide\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/changelog/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\changelog\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/clomifene/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\clomifene\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/contact/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\contact\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/currency-converter/converter.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\currency-converter\converter.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/currency-converter/currencies.js
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\currency-converter\currencies.js
+Content Type: application/javascript
+
+Uri: https://hrt.eda.gay/cypro/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\cypro\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/domperidone/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\domperidone\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/donate/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\donate\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/dutasteride/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\dutasteride\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/finasteride/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\finasteride\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/gel/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\gel\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/gnrh/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\gnrh\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/injections/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\injections\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/legal/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\legal\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/medical/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\medical\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/patches/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\patches\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/pgp/hrt.cafe_0xFC8E427C_public.asc
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\pgp\hrt.cafe_0xFC8E427C_public.asc
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/pgp/hrtcafe2_0x5E47EAED_public.asc
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\pgp\hrtcafe2_0x5E47EAED_public.asc
+Content Type: application/octet-stream
+
+Uri: https://hrt.eda.gay/pgp/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\pgp\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/pills/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\pills\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/pioglitazone/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\pioglitazone\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/privacy/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\privacy\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/progesterone/gel/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\progesterone\gel\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/progesterone/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\progesterone\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/progesterone/injections/hydroxy/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\progesterone\injections\hydroxy\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/progesterone/injections/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\progesterone\injections\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/raloxifene/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\raloxifene\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/resources/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\resources\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/spironolactone/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\spironolactone\index.html
+Content Type: text/html
+
+Uri: https://hrt.eda.gay/tamoxifen/index.html
+File Name: D:\Usuario\Documents\Programming\websites\hrt.eda.gay\tamoxifen\index.html
+Content Type: text/html
+
