@@ -1,0 +1,64 @@
+body {
+  background-image: url(purple-stars-bg.gif);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-color: #000;
+  font-family: Consolas, monospace;
+  color: white;
+  font-size: medium;
+}
+
+.content {
+  max-width: 540px;
+  background-color:rgba(40, 48, 48, 0.75);
+  margin:18px auto 0px auto;
+  padding:  4px;
+  width: 95%;
+}
+
+.content p {
+    margin-left: 10px;
+    line-height: 1.5f;
+}
+
+#banner, #navbar {
+margin-top: 18px;
+width: 300px;
+text-align: center;
+font-weight: 700;
+color: white;
+font-size: 30px;
+padding: 4px;
+}
+
+#navbar {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+hr {
+    width: 350px;
+    margin-top:  18px;
+}
+
+.footer {
+    margin: 18px auto 0px auto;
+    width:  100%;
+    text-align: center;
+}
+
+#blinkies {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+
+#blinkie {
+width: 20%;
+}
+
+h2 {
+    text-align: center;
+    margin: 0px;
+}
