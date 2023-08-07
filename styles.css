@@ -18,7 +18,7 @@ body {
 
 .content p {
     margin-left: 10px;
-    line-height: 1.5f;
+    line-height: 1.5;
 }
 
 #banner, #navbar {
@@ -42,12 +42,14 @@ hr {
 }
 
 .footer {
-    margin: 18px auto 0px auto;
+    position:fixed;
+    bottom: 0px;
     width:  100%;
     text-align: center;
 }
 
 #blinkies {
+    margin: 5px auto 0px auto;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -61,4 +63,52 @@ width: 20%;
 h2 {
     text-align: center;
     margin: 0px;
+}
+
+#media {
+    text-align: center;
+}
+
+.subtext {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: small;
+    letter-spacing: 5px;
+    color: darkgray;
+    font-family: monospace;
+}
+
+#banner-subtext {
+    color: fuchsia;
+    animation: rainbow-color-change 8s infinite linear;
+    margin-top: 5px;
+    
+}
+
+@keyframes rainbow-color-change {
+    0% {
+      color: red;
+    }
+    14.28% {
+      color: orange;
+    }
+    28.57% {
+      color: yellow;
+    }
+    42.85% {
+      color: green;
+    }
+    57.14% {
+      color: blue;
+    }
+    71.42% {
+      color: blueviolet;
+    }
+    85.71% {
+      color: fuchsia;
+    }
+    100% {
+      color: red;
+    }
 }
