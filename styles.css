@@ -47,9 +47,10 @@ hr {
     bottom: 0px;
     width:  100%;
     text-align: center;
+    padding: 10px 0;
 }
 
-#blinkies {
+.blinkies {
     margin: 5px auto 0px auto;
     display: flex;
     flex-direction: row;
@@ -57,7 +58,14 @@ hr {
     justify-content: center;
 }
 
-#blinkie {
+.blinkies [src*="installgenderblinkie"],
+.blinkies [src*="imtransgivemeyourmoney"] {
+    max-width: 20%; /* Adjust this value to fit the layout */
+    /* Other custom styles if needed */
+    object-fit: contain;
+}
+
+.blinkies img {
 width: 20%;
 }
 
