@@ -62,7 +62,6 @@ hr {
 .blinkies [src*="imtransgivemeyourmoney"] {
     max-width: 20%; /* Adjust this value to fit the layout */
     /* Other custom styles if needed */
-    object-fit: contain;
 }
 
 .blinkies img {
