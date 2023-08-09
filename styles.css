@@ -7,6 +7,12 @@ body {
   color: white;
   font-size: medium;
   min-height: 100vh; /* Set a minimum height to ensure scrollability */
+  display: block;
+  margin: 0;
+}
+
+div {
+  display: block;
 }
 
 .content {
@@ -56,12 +62,6 @@ hr {
     flex-direction: row;
     gap: 10px;
     justify-content: center;
-}
-
-.blinkies [src*="installgenderblinkie"],
-.blinkies [src*="imtransgivemeyourmoney"] {
-    max-width: 20%; /* Adjust this value to fit the layout */
-    /* Other custom styles if needed */
 }
 
 .blinkies img {
@@ -133,3 +133,5 @@ h2 {
 
 html {  -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */}
+
+
