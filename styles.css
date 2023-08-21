@@ -6,7 +6,7 @@ body {
   font-family: Consolas, monospace;
   color: white;
   font-size: medium;
-  min-height: 100vh; /* Set a minimum height to ensure scrollability */
+  min-height: 1000vh; /* Set a minimum height to ensure scrollability */
   display: block;
   margin: 0;
 }
