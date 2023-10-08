@@ -30,7 +30,7 @@ div {
 
 #banner, #navbar {
 margin-top: 18px;
-width: 300px;
+width: 350px;
 text-align: center;
 font-weight: 700;
 color: white;
@@ -39,6 +39,7 @@ padding: 4px;
 }
 
 #navbar {
+    width: 350px;
     font-size: 15px;
     margin-top: 6px;
 }
