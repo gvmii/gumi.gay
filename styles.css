@@ -134,4 +134,19 @@ h2 {
 html {  -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */}
 
+  .flexbox-container {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    justify-content: center;
+    background-color: rgba(39, 48, 48, 0.75);
+    margin: 9px 100px 10px 100px; /* Adjust the margin as needed */
+    padding: 3px;
+}
 
+.flexbox-container img {
+  width: 49%;
+  height: auto;
+  margin: 9px;
+
+}
