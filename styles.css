@@ -76,10 +76,10 @@ hr {
     justify-content: center;
 }
 
-.blinkies img {
+.blinkies img{
 width: 20%;
 }
-
+  
 h2 {
     text-align: center;
     margin: 0px;
@@ -182,9 +182,13 @@ html {  -ms-overflow-style: none;  /* IE and Edge */
   
 }
 
+.hidden-text {
+  display: none;
+}
 
-
-
+.hidden-text:target {
+  display: block;
+}
 
 
 
