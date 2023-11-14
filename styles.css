@@ -14,7 +14,7 @@ body {
   font-family: Blue Screen;
   color: white;
   font-size: medium;
-  min-height: 1000vh; /* Set a minimum height to ensure scrollability */
+  min-height: 110vh; /* Set a minimum height to ensure scrollability */
   display: block;
   margin: 0;
 }
@@ -203,67 +203,67 @@ html {  -ms-overflow-style: none;  /* IE and Edge */
 
 @keyframes flicker {
   0% {
-    opacity: 0.27861;
+  opacity: 0.27861;
   }
   5% {
-    opacity: 0.34769;
+  opacity: 0.34769;
   }
   10% {
-    opacity: 0.23604;
+  opacity: 0.23604;
   }
   15% {
-    opacity: 0.90626;
+  opacity: 0.90626;
   }
   20% {
-    opacity: 0.18128;
+  opacity: 0.18128;
   }
   25% {
-    opacity: 0.83891;
+  opacity: 0.83891;
   }
   30% {
-    opacity: 0.65583;
+  opacity: 0.65583;
   }
   35% {
-    opacity: 0.67807;
+  opacity: 0.67807;
   }
   40% {
-    opacity: 0.26559;
+  opacity: 0.26559;
   }
   45% {
-    opacity: 0.84693;
+  opacity: 0.84693;
   }
   50% {
-    opacity: 0.96019;
+  opacity: 0.96019;
   }
   55% {
-    opacity: 0.08594;
+  opacity: 0.08594;
   }
   60% {
-    opacity: 0.20313;
+  opacity: 0.20313;
   }
   65% {
-    opacity: 0.71988;
+  opacity: 0.71988;
   }
   70% {
-    opacity: 0.53455;
+  opacity: 0.53455;
   }
   75% {
-    opacity: 0.37288;
+  opacity: 0.37288;
   }
   80% {
-    opacity: 0.71428;
+  opacity: 0.71428;
   }
   85% {
-    opacity: 0.70419;
+  opacity: 0.70419;
   }
   90% {
-    opacity: 0.7003;
+  opacity: 0.7003;
   }
   95% {
-    opacity: 0.36108;
+  opacity: 0.36108;
   }
   100% {
-    opacity: 0.24387;
+  opacity: 0.24387;
   }
 }
 @keyframes textShadow {
@@ -360,4 +360,87 @@ html {  -ms-overflow-style: none;  /* IE and Edge */
 }
 .crt {
   animation: textShadow 1.6s infinite;
+  position: relative;
+}
+.swatch-container {
+  display: inline-block;
+  width: 100px;
+  margin: 10px;
+}
+.swatch {
+  height: 100px;
+  background-color: white;
+	position: relative;
+	color: black;
+}
+.sd-h-xl::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  z-index: 2;
+	pointer-events: none;
+}
+.sd-v-xl::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+	background: linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+	pointer-events: none;
+}
+.sd-l::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 20px, 30px 100%;
+	pointer-events: none;
+}
+.sd::before {
+	content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+	pointer-events: none;
+}
+
+.sd {
+  position: relative;
+}
+.flicker::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.textshadow {
+	animation: textShadow 1.6s infinite;
 }
