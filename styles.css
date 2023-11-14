@@ -1,9 +1,17 @@
+@font-face {
+  font-family: 'Blue Screen';
+    src: url('/Blue\ Screen\ Personal\ Use.ttf'); /* IE9 Compat Modes */
+
+    font-style: normal;
+    font-weight: 900;
+}
+
 body {
   background-image: url(purple-stars-bg.gif);
   background-repeat: repeat;
   background-attachment: fixed;
   background-color: #000;
-  font-family: Consolas, monospace;
+  font-family: Blue Screen;
   color: white;
   font-size: medium;
   min-height: 1000vh; /* Set a minimum height to ensure scrollability */
@@ -11,6 +19,9 @@ body {
   margin: 0;
 }
 
+a {
+  color: hotpink;
+}
 div {
   display: block;
 }
@@ -150,4 +161,13 @@ html {  -ms-overflow-style: none;  /* IE and Edge */
   height: auto;
   margin: 9px;
 
+}
+
+#pgp {
+  max-width: auto;
+  text-align: center;
+  background-color:rgba(156, 85, 129, 0.75);
+  margin:0px auto 0px auto;
+  width: fit-content;
+  
 }
