@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Changelog</title>
+	<title>Finasteride</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<meta name="robots" content="noindex, noarchive, nosnippet">
 	<link rel="preload" as="font" type="font/woff2" href="../assets/css/fonts/inter-400.woff2" crossorigin>
@@ -100,8 +100,8 @@
 			<a class="internal" href="../gnrh/index.html"><span class="icon-fa5-syringe"></span><span class="text">GnRH Agonists</span></a>
 		</li>
 		<li class="list-item category hairloss"><div class="spacecat">Hair Loss</div></li>
-		<li class="list-item">
-			<a class="internal" href="../finasteride/index.html"><span class="icon-fa5-pills"></span><span class="text">Finasteride</span></a>
+		<li class="list-item active">
+			<a class="internal" href="index.html"><span class="icon-fa5-pills"></span><span class="text">Finasteride</span></a>
 		</li>
 		<li class="list-item">
 			<a class="internal" href="../dutasteride/index.html"><span class="icon-fa5-pills"></span><span class="text">Dutasteride</span></a>
@@ -142,173 +142,190 @@
     </ul>
 </nav>
 		<div id="main">
-			<div class="card shadow"><div class="card-header"><h2>Changelog</h2></div><div class="card-body"><table id="generate_other" data-order="[[0, &quot;desc&quot;]]">
-	<thead>  
-	  <tr>
-		<th id="date">Date</th>
-		<th id="type">Type</th>
-		<th id="note">Note</th>
-	  </tr>
-	</thead>
-<tbody>
+<p class="p1"><b>Free Estradiol Estimator</b></p>
+<p class="p2"><br></p>
+<p class="p3">Note: The results will be low if you are taking Boron. It will also be low if your T is a significant proportion of your SHBG.</p>
+<p class="p2"><br></p>
+<p class="p3">To use, enter your E2 and T in SI or US units and hit the calculate button.</p>
+<p class="p2"><br></p>
+<p class="p3"><span class="Apple-converted-space"> </span><i>The equations used come from here: https://cebp.aacrjournals.org/content/11/10/1065</i></p>
+<p class="p3"><i><span class="Apple-converted-space"> </span>They are from the 1st set by Vermeulen et al</i></p>
+<br/>
+<table>
+    <tr>
+        <td>Estradiol (E2) pmol/L </td>
+        <td><input tabindex = 1 id= "E2SI" type="text" name="E2SI" value="0" onchange="E2SIChange(this.value)"></td>
+        <td>Estradiol (E2) pg/mL</td>
+        <td><input tabindex = 2 id="E2US" type="text" name="E2US" value="0" onchange="E2USChange(this.value)"></td>
+    </tr>
+    <tr>
+        <td>Testosterone (T) nmol/L </td>
+        <td><input tabindex = 3 id="TSI" type="text" name="TSI" value="0" onchange="TSIChange(this.value)"></td>
+        <td>Testosterone (T) ng/dL</td>
+        <td><input tabindex = 4 id="TUS" type="text" name="TUS" value="0" onchange="TUSChange(this.value)"></td>
+    </tr>
+    <tr>
+        <td/>
+        <td>SHBG nmol/L </td>
+        <td><input tabindex = 5 id=SHBG type="text" name="SHBG" value="0"></td>
+    </tr>
+    <tr>
+        <td/>
+        <td colspan="2"><br/><input tabindex = 6 type="button" name="Calculate Free E2" value="Calculate Free E2" onclick="CalculateFreeE2()"></td>
+    </tr>
+    <tr>
+        <td>Free E2 pmol/L </td>
+        <td id="FreeE2SI"/>
+        <td>Free E2 pg/mL</td>
+        <td id="FreeE2US"/>
+    </tr>
+    <tr>
+        <td>Free T pmol/L </td>
+        <td id="FreeTSI"/>
+        <td>Free T ng/dL</td>
+        <td id="FreeTUS"/>
+    </tr>
+</table>
+<br/>
+<p class="p4"><i>For any issues, contact u/Ally-SR on Reddit</i><br></p>
+<script>
+    function E2SIChange(newValue) {
+        E2US.value = (newValue * 0.2724).toFixed(2);
+    }
+    function E2USChange(newValue) {
+        E2SI.value = (newValue / 0.2724).toFixed(2);
+    }
+    function TSIChange(newValue) {
+        TUS.value = (newValue * 28.842).toFixed(2);
+    }
+    function TUSChange(newValue) {
+        TSI.value = (newValue / 28.842).toFixed(2);
+    }
 
-<tr>
-    <td>2022.09.11</td><td>Upgrade</td><td>Reduced CSS shadows and increased border contrast.</td>
-</tr>
+    function CalculateFreeE2() {
 
-<tr>
-    <td>2022.09.11</td><td>Update</td><td>Updated EUAibolit listings.</td>
-</tr>
+        // This is a chunk of code to calculate Free E2 and Free T
+        // You are free to use it for whatever you want, just don't claim copyright over it.
+        //
+        // All quantities are normalised into mol/L as the various constants are in L/mol
+        //
+        // The equations used come from here: https://cebp.aacrjournals.org/content/11/10/1065
+        // They are from the 1st set by Vermeulen et al
+        //
+        // Following the reference to the linked paper, and extrapolating I also tried to calculate the Albumen bound E2
+        // Apparently around 60% of E2 is bound to Albumin and that's about the result I get so ...
+        //
 
-<tr>
-    <td>2022.08.27</td><td>Update</td><td>Updated InHousePharmacy prices.</td>
-</tr>
+        E2 = E2SI.value;
+        E2 = E2 * 1e-12;
 
-<tr>
-    <td>2022.08.27</td><td>Update</td><td>Updated BG Pharmacy domain.</td>
-</tr>
-   
-<tr>
-    <td>2022.07.23</td><td>Update</td><td>Updated DragonOrdnance listings.</td>
-</tr>
+        CSHBG = SHBG.value;
+        CSHBG = CSHBG * 1e-9;
 
-<tr>
-    <td>2022.07.23</td><td>Update</td><td>Added OELabs to suppliers.</td>
-</tr>
+        fE2 = E2/100;  // First cut estimate. The algorithm will refine this up or down until the require accuracy is reached.
 
-<tr>
-    <td>2022.07.23</td><td>Update</td><td>Added DashPCT to suppliers.</td>
-</tr>
+        T = TSI.value;
+        T = T * 1e-9;
 
-<tr>
-    <td>2022.07.23</td><td>Upgrade</td><td>Changed contact message max size to 60000 characters to play nicer with PGP encrypted messages.</td>
-</tr>
 
-<tr>
-    <td>2022.07.15</td><td>Update</td><td>Updated InHousePharmacy and EUAibolit prices.</td>
-</tr>
+        KaE2 = 4.21e4;  // L/mol  - Affinity constant for E2 to bind to Albumin
+        Ca = 6.5e-4;    // mol/L  - Apparently Albumen is normally in this concentration in the blood (from the paper above)
+        //          Looking back at my labs it is spot on for one test and off 2% for another. I figure close enough
+        // Vermeulen paper has this constant slightly lower at 6.2e-4
 
-<tr>
-    <td>2022.07.11</td><td>Update</td><td>Updated BG-Pharmacy prices.</td>
-</tr>
+        N2 = (KaE2 * Ca) + 1;   // N2 from the equation in the reference. Albumen loves E2 even more than T
+        KsE2 = 3.14e8;   // L/mol - Affinity constant for E2 to bind to SHBG
+        KaT = 4.06e4;    // L/mol - Affinity constant to bind T to Albumin  - lower than E2?
+        KsT = 1.0e9;     // L/mol - Affinity constant to bind  T to SHBG. It's a little over 3 x KsE2, but I thought I heard people say it was more
+        N1 = (KaT * Ca) + 1;  // N1 calculation from the paper
 
-<tr>
-    <td>2022.07.11</td><td>Update</td><td>Updated OTC-Online-Store payment methods to crypto only.</td>
-</tr>
+        fE2diff = 1;    // can be any number to start off, gets refined each loop.
 
-<tr>
-    <td>2022.07.11</td><td>Upgrade</td><td>Increased mobile responsive design.</td>
-</tr>
+        // My maths is too rusty to solve the equation properly, so I'm brute forcing it, trying values until I am
+        // within .01pmol/L of the answer. I figure that is accurate enough.
 
-<tr>
-    <td>2022.06.27</td><td>Update</td><td>BK-Retail is no longer online.</td>
-</tr>
+        increment = 1e-12; // We start at 1% and step upwards at first trying to find a closer answer
+        fE2 = E2/100;
 
-<tr>
-    <td>2022.06.11</td><td>Update</td><td>Updated StayHealthyNow.co domain to RxAisle.com.</td>
-</tr>
+        while (fE2diff > 1e-15) {
 
-<tr>
-    <td>2022.05.26</td><td>Update</td><td>Temporarily hidden Aphrodite's and Lena's from view.</td>
-</tr>
+            // The equation from the referenced paper for calculating fE2
+            // I start with a guessed value first and run the calculation.
+            //
+            fE2p = (E2 - N2 * fE2)/(KsE2 * (CSHBG - E2 + (N2*fE2)));
 
-<tr>
-    <td>2022.05.09</td><td>Upgrade</td><td>The new backend to make maintaining the lists much easier is mostly complete and in a closed beta on our backup domain at <a class="internal underline" href="https://hrt.wiki">hrt.wiki</a>. Some additional features will be added eventually.</td>
-</tr>
+            // See how close provisional and calculated values are
+            lastdiff = fE2diff;   // how close were we last time
+            fE2diff = Math.abs(fE2p - fE2);  // calculate how close we were this time
 
-<tr>
-    <td>2022.05.05</td><td>Update</td><td>Updated all listings and prices. All of it.</td>
-</tr>
+            // If we are further away than last time, start moving in the other direction, but more slowly.
+            if (fE2diff > lastdiff) {
+                increment = -increment / 10;
+            }
+            // Neither of the values will be right,the right value will be somewhere in the middle.
+            // We iterate until we get something close enough
 
-<tr>
-    <td>2022.05.05</td><td>Upgrade</td><td>Added a Pioglitazone category.</td>
-</tr>
+            //# print fE2*1e12, fE2p*1e12, fE2diff*1e12
+            //# raw_input("Iter: ")
 
-<tr>
-    <td>2022.04.24</td><td>Update</td><td>DragonOrdnance added to verified. Removed recent icon on BG-Pharmacy, BK-Retail, and Zeemore.</td>
-</tr>
-    
-<tr>
-    <td>2022.04.15</td><td>Update</td><td>Owner transfer in progress. It will not make any noticeable difference for visitors. [<a rel="nofollow noreferrer" href="https://nitter.net/HrtCafe/status/1514973999670956044">Link</a>]</td>
-</tr>
-    
-<tr>
-    <td>2022.04.09</td><td>Update</td><td>Updated InHousePharmacy listings and prices.</td>
-</tr>
-    
-<tr>
-    <td>2022.04.09</td><td>Update</td><td><b>Pruned all logs from before December 2021.</b></td>
-</tr>
-    
-<tr>
-    <td>2022.03.29</td><td>Update</td><td>Updated EU-Aibolit listings and prices.</td>
-</tr>
+            fE2 += increment; // move to a closer value;
+            // fE2 = (fE2 + fE2p)/2
+        }
 
-<tr>
-    <td>2022.02.19</td><td>Update</td><td>Updated PharmaOnline payment methods.</td>
-</tr>  
-    
-<tr>
-    <td>2022.02.17</td><td>Update</td><td>After sufficient testing Bangkok-Retail and ZeemoreUncle has been added.</td>
-</tr>      
+        // We have iterated to within .01 of a pmol/L so that is the answer we print out
+        // print "Free E2 pmol/L = {0:.2f}".format(fE2 * 1.0e12)
+        // print "Free E2 % = {0:.2f}".format(fE2/E2*100)
 
-<tr>
-    <td>2022.02.01</td><td>Update</td><td>Fixed https links for UP-UK.</td>
-</tr>  
-    
-<tr>
-    <td>2022.02.01</td><td>Upgrade</td><td>Fixed tooltips on pagination. Added button to reset search field. Added link to copy link for current search to clipboard for easier sharing.</td>
-</tr>  
-    
-<tr>
-    <td>2022.01.24</td><td>Update</td><td>BuyDeus Ralox added.</td>
-</tr>     
 
-<tr>
-    <td>2022.01.23</td><td>Update</td><td>More products added for StayHealthyNow.</td>
-</tr>  
-    
-<tr>
-    <td>2022.01.17</td><td>Update</td><td>Updated Amazing4Health Payment methods.</td>
-</tr>  
-    
-<tr>
-    <td>2022.01.16</td><td>Upgrade</td><td>Replaced remaining payment method text with brand logos, modified SVGs converted to fonts for dark mode compatability. Minor dark theme fixes.</td>
-</tr>      
+        //# Not confident of this equation, but it is the E2 equivalent of the T equation in the Vermuelen paper
+        //AE2 = KaE2*Ca*fE2
+        //print "Albumin bound E2 = {0:.2f}".format(AE2 * 1.0e12)
 
-<tr>
-    <td>2022.01.16</td><td>Update</td><td>Updated BG Pharmacy listings and payment methods.</td>
-</tr>  
-    
-<tr>
-    <td>2022.01.16</td><td>Update</td><td>Updated OTC-Online-Store payment methods.</td>
-</tr>  
-    
- <tr>
-    <td>2021.12.31</td><td>Update</td><td>Added Farmacy Houses.</td>
-</tr>   
+        // Same algorithm again, but this time for T
 
-<tr>
-    <td>2021.12.23</td><td>Update</td><td>Listings updated for AllDayChemist, ReliableRxPharmacy, StayHealthyNow, GoodStuffStore, FavskinHouse, Amazing4Health and Otokonoko.</td>
-</tr>     
+        fTdiff = 1;
+        fT = T/100;
+        increment = 1.0e-9;
+        while (fTdiff > 1e-15) {
+            fTp = (T - N1 * fT)/(KsT * (CSHBG - T + (N1*fT)));
+            lastdiff = fTdiff;
+            fTdiff = Math.abs(fTp - fT);
+            if (fTdiff > lastdiff) {
+                increment = -increment / 10;
+            }
+            fT += increment;
+        }
 
-<tr>
-    <td>2021.12.22</td><td>Update</td><td>Listings updated for InHousePharmacy, EUAibolit, Aphrodite's, UnitedPharmacies-US, UnitedPharmacies-UK, UnitedPharmacies-NL, Pilloid, OTC-Online-Store, PharmaOnline, WebOrderPharmacy, WebOrderPharmacy-UK, Medicina Mexico, Bio-Japan,  and BGPharmacy.</td>
-</tr> 
-    
-<tr>
-    <td>2021.12.01</td><td>Prune</td><td>All logs before this have been deleted.</td>
-</tr> 
-	
-</tbody>
-<tfoot></tfoot>
-</table></div></div>		</div>
 
+        AT = KaT*Ca*fT;
+        // print "Albumin bound T (nmol/L) = {0:.2f}".format(AT * 1.0e9)
+        SHBGT = (T-AT-fT);
+        // print "SHBG bound T (nmol/L) = {0:.2f}".format(SHBGT*1e9)
+
+        if (SHBGT > CSHBG / 20) {
+            alert ("T is stealing a lot of SHBG, so Free E value is probably a bit lower than it should be");
+        }
+        // calculations
+        fE2SIf = (fE2 * 1.0e12).toFixed(2);
+        fE2USf = (fE2 * 1.0e12 * 0.2724).toFixed(2);
+        fE2percent = (fE2 / E2 * 100).toFixed(2);
+
+        fTSIf = (fT * 1.0e12).toFixed(2);
+        fTUSf = (fT * 1.0e9 * 28.842).toFixed(2);
+        fTpercent = (fT / T * 100).toFixed(2);
+
+        window.document.getElementById('FreeE2SI').innerText = fE2SIf + " ("+fE2percent+"%)";
+        window.document.getElementById('FreeE2US').innerText = fE2USf + " ("+fE2percent+"%)";
+        window.document.getElementById('FreeTSI').innerText = fTSIf + " ("+fTpercent+"%)";
+        window.document.getElementById('FreeTUS').innerText = fTUSf + " ("+fTpercent+"%)";
+    }
+
+</script>
 		<div class="footer">
 	<p class="small">Prices and exchange rates are for informational purposes only.
 		<br>They are not guaranteed to be accurate and are subject to change without notice.</p>
 	<p class="small">If you think you may have a medical emergency, please contact your doctor or emergency services.</p>
-	<p class="small"><span><a class="internal" href="../privacy/index.html">Privacy</a>&nbsp; •&nbsp;<a class="internal" href="../legal/index.html">Legal</a>&nbsp; •&nbsp; <a class="internal" href="../medical/index.html">Medical</a>&nbsp; •&nbsp; <a class="internal" href="index.html">Changelog</a>&nbsp; •&nbsp; <a class="internal" href="../contact/index.html">Contact</a><br></span></p>
+	<p class="small"><span><a class="internal" href="../privacy/index.html">Privacy</a>&nbsp; •&nbsp;<a class="internal" href="../legal/index.html">Legal</a>&nbsp; •&nbsp; <a class="internal" href="../medical/index.html">Medical</a>&nbsp; •&nbsp; <a class="internal" href="../changelog/index.html">Changelog</a>&nbsp; •&nbsp; <a class="internal" href="../contact/index.html">Contact</a><br></span></p>
 	<p><a class="external" href="https://twitter.com/HrtCafe" target="_blank"><span class="icon-fa4-twitter"></span></a></p>
 </div>	</div>
 
