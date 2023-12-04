@@ -1,0 +1,3 @@
+URL/URL path to exclude: gumi.gay (and all subdomains)
+time period of domain ownership:  Jun 27, 2023 to present
+time period to exclude: Just October 1st.
