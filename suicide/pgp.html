@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PGP Protected Message</title>
+    <script src="https://unpkg.com/openpgp@5.10.0/dist/openpgp.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 2em;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+        }
+
+        input,
+        button {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>🔐 Enter Password to Decrypt Message</h2>
+    <input type="password" id="passphrase" placeholder="Enter passphrase" />
+    <button onclick="decrypt()">Decrypt</button>
+
+    <h3>Decrypted Message</h3>
+    <pre id="output">[Nothing yet]</pre>
+
+    <script>
+        const encryptedMessage = `-----BEGIN PGP MESSAGE-----
+
+jA0ECQMILyeZxKBMAgz+0kYBd2GF+XfY84GCXkxK6JO6oxBUUFv/fVsNIx0zEuWG
+gBRc13JT41iN/Igw9DE5ubJYyi4SeoIQw3lmMtJI6YeBU3QFUviZ
+=GDe7
+-----END PGP MESSAGE-----`;
+
+        async function decrypt() {
+            const passphrase = document.getElementById('passphrase').value;
+
+            try {
+                const message = await openpgp.readMessage({ armoredMessage: encryptedMessage });
+                const { data: decrypted } = await openpgp.decrypt({
+                    message,
+                    passwords: [passphrase],
+                    format: 'utf8'
+                });
+                document.getElementById('output').textContent = decrypted;
+            } catch (err) {
+                document.getElementById('output').textContent = '❌ Decryption failed: ' + err.message;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
