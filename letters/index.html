@@ -2,24 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>GumiRing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8" />
-    <title>A message to people if I'm not here</title>
+    <title>GumiRing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <script src="https://unpkg.com/openpgp@5.10.0/dist/openpgp.min.js"></script>
     <link rel="stylesheet" href="/styles.css" />
     <style>
-        /* CRT style and typewriter effect for decrypted message */
         #output.crt-typewriter {
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;
-            /* big text */
             color: #00ff00;
-            /* bright green */
             text-shadow:
                 0 0 5px #00ff00,
                 0 0 10px #00ff00,
@@ -29,54 +24,46 @@
                 0 0 55px #00ff00,
                 0 0 75px #00ff00;
             white-space: pre-wrap;
-            /* preserve line breaks */
             user-select: text;
             min-height: 4rem;
-            /* prevent jumping */
         }
     </style>
 </head>
 
 <body>
-
-    <div id="banner" class="crt" style="
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;">
+    <div id="banner" class="crt" style="margin-left:auto; margin-right:auto; width:fit-content;">
         Letters
     </div>
-    <div class="content crt">
 
+    <div class="content crt">
         <h2 class="textshadow">🔐 Decrypt Your Letter</h2>
 
         <label for="recipient" class="textshadow">Choose your name:</label>
         <select id="recipient" class="crt">
             <option value="">-- Select --</option>
-            <option value="clementine">Clementine</option>
-            <option value="melcon">Melcon</option>
-            <option value="space">Space</option>
         </select>
 
-        <br><br>
+        <br /><br />
 
         <label for="passphrase" class="textshadow">Enter your shared secret:</label>
         <input type="password" id="passphrase" placeholder="Enter passphrase" class="textshadow" />
 
-        <br><br>
+        <br /><br />
 
         <button onclick="decrypt()" class="crt">🔓 Unlock Letter</button>
 
-        <hr>
+        <hr />
 
         <div id="hint" class="crt subtext">[Nothing yet]</div>
         <div id="output" class="crt subtext"></div>
-
     </div>
 
     <script>
-        const encryptedMessages = {
-            clementine: `-----BEGIN PGP MESSAGE-----
-
+        const recipients = {
+            clementine: {
+                label: "Clementine",
+                hint: "Hint: Luna, remember your favorite pet's name.",
+                message: `-----BEGIN PGP MESSAGE-----
 jA0ECQMI6a1Gu08Nu8/60ukB7w+lj1YKxESlXNnPhAG/K714o3xastsNHauaA0PO
 z/a8L0IVDOz6BIoObcXYDeeTdvNhmnTtoqpn/q15ywAdy8KgICVxk9pLa8YsTkVf
 7TsFbYKSVqqFqJHLHvz2LT3ZXUG3lAG4LKnrGjrfODJxRK78iGPhPtW6g/BKEOiy
@@ -96,36 +83,45 @@ XbAAVg3YGidsx230SFH3bM9kYXINL7MiLU4hW0w3utPCLNxEDnEO6Q/J2zlqodJg
 KycmzyXGkmlFFQgzYGlbFy/9vhYrRiYDLEJF7Ogx8uA69xZOcOv6ecTu9E9NW1gc
 zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
 =94yf
------END PGP MESSAGE-----
-
-`,
-            melcon: `-----BEGIN PGP MESSAGE-----
+-----END PGP MESSAGE-----`
+            },
+            melcon: {
+                label: "Melcon",
+                hint: "Hint: Melcon, what stars did we see the night we met.",
+                message: `-----BEGIN PGP MESSAGE-----
 ...mateo's encrypted message here...
------END PGP MESSAGE-----`,
-            space: `-----BEGIN PGP MESSAGE-----
+-----END PGP MESSAGE-----`
+            },
+            space: {
+                label: "Space",
+                hint: "Hint: What is your favorite anime?",
+                message: `-----BEGIN PGP MESSAGE-----
 ...alex's encrypted message here...
 -----END PGP MESSAGE-----`
-        };
-
-        const hints = {
-            clementine: "Hint: Luna, remember your favorite pet'ss name.",
-            melcon: "Hint: Melcon, what stars did we see the night we met.",
-            space: "Hint: What is your favorite anime?"
+            }
         };
 
         const recipientSelect = document.getElementById('recipient');
         const hintDiv = document.getElementById('hint');
         const output = document.getElementById('output');
 
+        // Populate select menu dynamically
+        for (const key in recipients) {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = recipients[key].label;
+            recipientSelect.appendChild(option);
+        }
+
         recipientSelect.addEventListener('change', () => {
             const selected = recipientSelect.value;
-            if (selected && hints[selected]) {
-                hintDiv.textContent = hints[selected];
+            if (recipients[selected]) {
+                hintDiv.textContent = recipients[selected].hint;
             } else {
                 hintDiv.textContent = "[Nothing yet]";
             }
             document.getElementById('passphrase').value = '';
-            output.textContent = ''; // Clear previous output
+            output.textContent = '';
             output.classList.remove('crt-typewriter');
         });
 
@@ -133,7 +129,6 @@ zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
             element.textContent = '';
             element.classList.add('crt-typewriter');
             let i = 0;
-
             function type() {
                 if (i < text.length) {
                     element.textContent += text.charAt(i);
@@ -146,7 +141,7 @@ zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
 
         async function decrypt() {
             const selected = recipientSelect.value;
-            if (!selected) {
+            if (!selected || !recipients[selected]) {
                 alert("Please select a recipient first.");
                 return;
             }
@@ -157,14 +152,8 @@ zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
                 return;
             }
 
-            const encryptedMessage = encryptedMessages[selected];
-            if (!encryptedMessage) {
-                output.textContent = "No encrypted message found for this recipient.";
-                output.classList.remove('crt-typewriter');
-                return;
-            }
-
             try {
+                const encryptedMessage = recipients[selected].message;
                 const message = await openpgp.readMessage({ armoredMessage: encryptedMessage });
                 const { data: decrypted } = await openpgp.decrypt({
                     message,
@@ -173,14 +162,13 @@ zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
                 });
 
                 typewriterEffect(output, decrypted, 40);
-                hintDiv.textContent = ''; // Remove hint on success
+                hintDiv.textContent = '';
             } catch (err) {
                 output.textContent = '❌ Decryption failed: ' + err.message;
                 output.classList.remove('crt-typewriter');
             }
         }
     </script>
-
 </body>
 
 </html>
