@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <title>GumiRing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8" />
-    <title>PGP Protected Message</title>
+    <title>A message to people if I'm not here</title>
     <script src="https://unpkg.com/openpgp@5.10.0/dist/openpgp.min.js"></script>
     <link rel="stylesheet" href="/styles.css" />
     <style>
@@ -46,9 +52,9 @@
         <label for="recipient" class="textshadow">Choose your name:</label>
         <select id="recipient" class="crt">
             <option value="">-- Select --</option>
-            <option value="luna">Luna</option>
-            <option value="mateo">Mateo</option>
-            <option value="alex">Alex</option>
+            <option value="luna">Clementine</option>
+            <option value="mateo">Melcon</option>
+            <option value="alex">Space</option>
         </select>
 
         <br><br>
@@ -71,18 +77,27 @@
         const encryptedMessages = {
             luna: `-----BEGIN PGP MESSAGE-----
 
-jA0ECQMIPdaL6sCkGO360sD+ASlG683jZr/Ns5Bf9v/whhult13SBKEpnuCdH9Bi
-dZuiTPE6zHsYgdvUWQ/WamJTq7iF+LkbklYvIBBpbVzlNCL7eodUqmnuvyG2wu+v
-3Z7rbXSAYkzkVkJ8TGkKWQaGq7w7hSRL+uS4YSBduLLYiRbqlStuAYcuzmP2N1p6
-DEMvFBm5vcBlaJYnT74lp/xv+FBmoGi7LSrZv809XKW0mGxqvYDkNvcUJww1imyc
-sLhNR8LW/5cDZ/lRdGhKGJTacwVwnvlVU1uGEKG/uIzJItGf2s5bM4mLvYBQkBgi
-cPXPa2D68ZS+hkF3Ex1Si8jqFyzvudETjxzvt3neOxOhY8H4OsC5P+xBN4iXr1a5
-Bp4ba28JlUgmjUd9BM30tgeam3vSZJfIQ3Sox7P7DJiU5XGdGEkk51tzplHhHbjC
-xfmlt050pZOocpj3DaLh7LbEPXbJRLKkjsLxrTJuliTyHBnD8pSi6SzvQCyB3AH2
-Rrc9f39EcaF7m/Q7TVDjGwi2Xw/GTSZTKbOaHWy9/oTyCW0B4gwnNYva9tFJk+Eb
-7mrZyqhOg65q88bRxqbHehE2egqg+MdvSlHbHNhNeLs=
-=N4Q1
+jA0ECQMI6a1Gu08Nu8/60ukB7w+lj1YKxESlXNnPhAG/K714o3xastsNHauaA0PO
+z/a8L0IVDOz6BIoObcXYDeeTdvNhmnTtoqpn/q15ywAdy8KgICVxk9pLa8YsTkVf
+7TsFbYKSVqqFqJHLHvz2LT3ZXUG3lAG4LKnrGjrfODJxRK78iGPhPtW6g/BKEOiy
+Gma1Y+uiIy+TqhWt5yRzuq4TS65cRKnI2LJo1nXjRwXXBVuFhMgqfmVmRtWdZsdp
+y1fp1UHsBuPdnK2D+1R+mKdGxjGAazIo/g2W9EmmXNeScUo5Y13Ow0UHZbxgy2p4
+OzmSiPSgnfe1cqkpFemWu32G0TxjSIAWsOM9QFdIas2oMisdMgneNpfyZsj5AwOd
+O+AhilZJK8jBDMXqgULFnUaBCIc+TFfXNbZbzx/wib5Sp+Ak8JYNefzAWx12akFM
+KE3VyCP3Glj3xpWWBb6yLUHvObstbAMSH7WjSlYo0753h3DhUMkX2u1zi169FM5x
+yvhFZ9zREljvjYzT5uQIoMqGXqhInpoI4qEkDl8d10Ye8lXUKaVR7gLqDsSwKdut
+ixuN9AFCRkIrI+T+U3sgoGj99oT9t97gJqFFdj/myvx8yZMpneyvMgwgAwwI5uTt
+cHEJqY59IkovhFSWx2wCelmqpQVV3y+HglX6dwSUyIfIsZsQssTtBQQYcm9QnWQ7
+7sCFaHSzJNjn879MZQaJ2but/M+gwm8BrALpPuPJbbCY9Kafz6+8xzzrwSNggmul
+P64nKOKhPKPsk7IZ1P7rKeqVgxhOGxv8z4igOAd6wmI9jJSSK61em11bBBMKb8oL
+arpr9jmixH8OQ7Qpur54oyPFxrgePtddexgIIsCv5uWfTW0Ae70d384mgxm011Ib
+iv8iTx9a1Sv2070TF7mqev4HCCi31CW3XRltorI8rs3YxdImIJN3RYjDZ4MaL4Yb
+XbAAVg3YGidsx230SFH3bM9kYXINL7MiLU4hW0w3utPCLNxEDnEO6Q/J2zlqodJg
+KycmzyXGkmlFFQgzYGlbFy/9vhYrRiYDLEJF7Ogx8uA69xZOcOv6ecTu9E9NW1gc
+zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
+=94yf
 -----END PGP MESSAGE-----
+
 `,
             mateo: `-----BEGIN PGP MESSAGE-----
 ...mateo's encrypted message here...
@@ -93,9 +108,9 @@ Rrc9f39EcaF7m/Q7TVDjGwi2Xw/GTSZTKbOaHWy9/oTyCW0B4gwnNYva9tFJk+Eb
         };
 
         const hints = {
-            luna: "Hint: Luna, remember your favorite pet's name.",
-            mateo: "Hint: Mateo, it's the date we met.",
-            alex: "Hint: Alex, your lucky number."
+            clementine: "Hint: Luna, remember your favorite pet's name.",
+            melcon: "Hint: Melcon, what stars did we see the night we met.",
+            space: "Hint: What is your favorite anime?"
         };
 
         const recipientSelect = document.getElementById('recipient');
