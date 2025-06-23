@@ -8,8 +8,8 @@
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <script src="https://unpkg.com/openpgp@5.10.0/dist/openpgp.min.js"></script>
     <link rel="stylesheet" href="/styles.css" />
+    <script src="https://unpkg.com/openpgp@5.10.0/dist/openpgp.min.js"></script>
     <style>
         #output.crt-typewriter {
             font-family: 'Courier New', Courier, monospace;
@@ -41,6 +41,10 @@
         <label for="recipient" class="textshadow">Choose your name:</label>
         <select id="recipient" class="crt">
             <option value="">-- Select --</option>
+            <option value="everyone">To Everyone</option>
+            <option value="clementine">Clementine</option>
+            <option value="melcon">Melcon</option>
+            <option value="space">Space</option>
         </select>
 
         <br /><br />
@@ -59,59 +63,69 @@
     </div>
 
     <script>
-        const recipients = {
-            everyone: {
-                label: "To Everyone",
-                hint: "The default message for all recipients. The password is 'Megumi'.",
-                message: `-----BEGIN PGP MESSAGE-----
+        const encryptedMessages = {
+            everyone: `-----BEGIN PGP MESSAGE-----
 
 jA0ECQMIs9+LjQN/R6T60ukB68L1wKUQ22saFky0Hv6bw24nEQtUDTMxLAKtpTze
-... [rest of encrypted message here] ...
+e/eAyDOEjvG4wEimMn3+06hVscdAFQXjl2UKHAFXQCpTz7FiNsemdhVwZUe1dXwn
+61+l43V+xeRv/rP+3Ca/cRJRIrUbj7/IGqVISZdz4o3w85zxHcK4HsWR+eLDfaK4
+RwuUozzg4f2LIX+gs7IzpbdBeor9f95/UvOsbmTqsu2PDx/SxBcoT9ex6dvYEfOn
+/rzGTxPuQfnHmChe10lzcwgxZKGrXOBDz3zT3GY2EcDBSv9r/P1xch9o0Z4+k8g0
+BQSEIoZgcuE1YzpWvPM5//LGjzwenzv3Itm14/dzNUvl43b3PNMijdcCN/r+XPbN
+jIGH0GYivR11fppIL7UDWk/mI6UD++8HZ9NtIx6MZGwGvSPV/k+Z7unxWJvkKHPw
+BSZaB4bGLIW6kiZ9c68bc2f8RmRC3pqzsnEBnGs8ngmZoi2sa+UIT9SKYQptpibG
+wdlEGRDpFZ1w0EZDt9SuPxhve7norRU7EjSnE7gS8PscPNvCaPjJhlAT4jf29WMh
+GieRaid0ium48E15j+nMXS9ps8OTUeaSkk0xoIZOX5ooLxsKSILUMd2ifeDabjF3
+ldfsIV4iPdMiCyuvgFi9FWNwUBRudwvUFxPqatNNC/DiQJ0K+gX+6Qua+wUtFw4h
+8XCLMmlUkfN1hRUknwkaYI/9f9fMsPVRbbl/4W7+S/h6ZJSuSJgl8EIkFzlzQmB7
+KrvbESgWQMrFB6NU4683AqyEcmQsXOxSMexpvuSsgMxY7xAIUO60OzVrWC1DCCdV
+SJO2DGDkBzuFR4fpyVirdJiE
 =WTQ7
------END PGP MESSAGE-----`
-            },
-            clementine: {
-                label: "Clementine",
-                hint: "Hint: Luna, remember your favorite pet's name.",
-                message: `-----BEGIN PGP MESSAGE-----
+-----END PGP MESSAGE-----`,
+
+            clementine: `-----BEGIN PGP MESSAGE-----
 
 jA0ECQMI6a1Gu08Nu8/60ukB7w+lj1YKxESlXNnPhAG/K714o3xastsNHauaA0PO
-... [rest of valid encrypted message here] ...
+z/a8L0IVDOz6BIoObcXYDeeTdvNhmnTtoqpn/q15ywAdy8KgICVxk9pLa8YsTkVf
+7TsFbYKSVqqFqJHLHvz2LT3ZXUG3lAG4LKnrGjrfODJxRK78iGPhPtW6g/BKEOiy
+Gma1Y+uiIy+TqhWt5yRzuq4TS65cRKnI2LJo1nXjRwXXBVuFhMgqfmVmRtWdZsdp
+y1fp1UHsBuPdnK2D+1R+mKdGxjGAazIo/g2W9EmmXNeScUo5Y13Ow0UHZbxgy2p4
+OzmSiPSgnfe1cqkpFemWu32G0TxjSIAWsOM9QFdIas2oMisdMgneNpfyZsj5AwOd
+O+AhilZJK8jBDMXqgULFnUaBCIc+TFfXNbZbzx/wib5Sp+Ak8JYNefzAWx12akFM
+KE3VyCP3Glj3xpWWBb6yLUHvObstbAMSH7WjSlYo0753h3DhUMkX2u1zi169FM5x
+yvhFZ9zREljvjYzT5uQIoMqGXqhInpoI4qEkDl8d10Ye8lXUKaVR7gLqDsSwKdut
+ixuN9AFCRkIrI+T+U3sgoGj99oT9t97gJqFFdj/myvx8yZMpneyvMgwgAwwI5uTt
+cHEJqY59IkovhFSWx2wCelmqpQVV3y+HglX6dwSUyIfIsZsQssTtBQQYcm9QnWQ7
+7sCFaHSzJNjn879MZQaJ2but/M+gwm8BrALpPuPJbbCY9Kafz6+8xzzrwSNggmul
+P64nKOKhPKPsk7IZ1P7rKeqVgxhOGxv8z4igOAd6wmI9jJSSK61em11bBBMKb8oL
+arpr9jmixH8OQ7Qpur54oyPFxrgePtddexgIIsCv5uWfTW0Ae70d384mgxm011Ib
+iv8iTx9a1Sv2070TF7mqev4HCCi31CW3XRltorI8rs3YxdImIJN3RYjDZ4MaL4Yb
+XbAAVg3YGidsx230SFH3bM9kYXINL7MiLU4hW0w3utPCLNxEDnEO6Q/J2zlqodJg
+KycmzyXGkmlFFQgzYGlbFy/9vhYrRiYDLEJF7Ogx8uA69xZOcOv6ecTu9E9NW1gc
+zb/cmR3lh7aFGrD/KJxPV1CllqlPjaVWM3G+WzeBrrJnHu9I3+Rwbg==
 =94yf
------END PGP MESSAGE-----`
-            },
-            melcon: {
-                label: "Melcon",
-                hint: "Hint: Melcon, what stars did we see the night we met.",
-                message: `-----BEGIN PGP MESSAGE-----
-...mateo's encrypted message here...
------END PGP MESSAGE-----`
-            },
-            space: {
-                label: "Space",
-                hint: "Hint: Space, what is your favorite anime?",
-                message: `-----BEGIN PGP MESSAGE-----
-...alex's encrypted message here...
------END PGP MESSAGE-----`
-            }
+-----END PGP MESSAGE-----`,
+
+            melcon: ``, // Replace with a real, un-indented PGP message
+
+            space: `` // Replace with a real, un-indented PGP message
+        };
+
+        const hints = {
+            everyone: "Hint: The password is 'Megumi'.",
+            clementine: "Hint: Luna, remember your favorite pet's name.",
+            melcon: "Hint: Melcon, what stars did we see the night we met.",
+            space: "Hint: What is your favorite anime?"
         };
 
         const recipientSelect = document.getElementById('recipient');
         const hintDiv = document.getElementById('hint');
         const output = document.getElementById('output');
 
-        // Populate <select> dropdown
-        for (const key in recipients) {
-            const option = document.createElement('option');
-            option.value = key;
-            option.textContent = recipients[key].label;
-            recipientSelect.appendChild(option);
-        }
-
         recipientSelect.addEventListener('change', () => {
             const selected = recipientSelect.value;
-            if (recipients[selected]) {
-                hintDiv.textContent = recipients[selected].hint;
+            if (selected && hints[selected]) {
+                hintDiv.textContent = hints[selected];
             } else {
                 hintDiv.textContent = "[Nothing yet]";
             }
@@ -136,7 +150,7 @@ jA0ECQMI6a1Gu08Nu8/60ukB7w+lj1YKxESlXNnPhAG/K714o3xastsNHauaA0PO
 
         async function decrypt() {
             const selected = recipientSelect.value;
-            if (!selected || !recipients[selected]) {
+            if (!selected) {
                 alert("Please select a recipient first.");
                 return;
             }
@@ -147,8 +161,14 @@ jA0ECQMI6a1Gu08Nu8/60ukB7w+lj1YKxESlXNnPhAG/K714o3xastsNHauaA0PO
                 return;
             }
 
+            const encryptedMessage = encryptedMessages[selected];
+            if (!encryptedMessage) {
+                output.textContent = "No encrypted message found for this recipient.";
+                output.classList.remove('crt-typewriter');
+                return;
+            }
+
             try {
-                const encryptedMessage = recipients[selected].message;
                 const message = await openpgp.readMessage({ armoredMessage: encryptedMessage });
                 const { data: decrypted } = await openpgp.decrypt({
                     message,
