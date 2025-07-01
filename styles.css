@@ -14,7 +14,7 @@ body {
   font-family: Blue Screen;
   color: white;
   font-size: medium;
-  min-height: 110vh; /* Set a minimum height to ensure scrollability */
+  min-height: 120vh; /* Set a minimum height to ensure scrollability */
   display: block;
   margin: 0;
 }
